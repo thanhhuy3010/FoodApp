@@ -6,7 +6,12 @@ module.exports = {
         root: ['.'],
         extensions: [ '.js', '.jsx', '.ts', '.tsx', '.json', '.svg','jpg'],
         alias: {
-          '@components': './src/components'
+          '@components': './src/components',
+          "@globals": './src/globals',
+          "@common": './src/common',
+          "@services": './src/services',
+          "@screens": './src/screens',
+          "@navigation": './src/navigation'
         }
       }
     ]

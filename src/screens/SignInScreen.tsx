@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import {StyleSheet, View, Text, TextInput, useWindowDimensions, TouchableOpacity} from 'react-native'
-import { parameters, colors } from '../../globals/styles';
+import { parameters, colors } from '../globals/styles';
 import { Icon, Button, SocialIcon } from "react-native-elements";
-import { TextCommon } from "../../globals/constant";
+import { TextCommon } from "@globals";
 import { Header, Input } from "@components";
 
 
-const SignInScreen = () => {
+const SignInScreen = React.memo( () => {
   const title = "MY ACCOUNT";
   const [passFocus, setPassFocused] = React.useState(false);
   // const [textInput1, setTextInput1] = React.useState(1);
@@ -85,12 +85,10 @@ const SignInScreen = () => {
           buttonStyle = {style.createButton}
           titleStyle = {style.createButtonTitle} />
       </View>
-
-
     </View>
 
   )
-}
+});
 
 const style = StyleSheet.create({
   container: {

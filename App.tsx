@@ -1,10 +1,10 @@
 import React from "react";
 
-import { View ,StyleSheet, Text, StatusBar, FlatList, FlatListProps, TextInput} from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { SignInScreen } from "./src/screens/authScreens";
-
+import { View ,StyleSheet, Text, StatusBar} from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { colors } from "./src/globals/styles";
+import {RootNavigator} from "@navigation";
+import { SignInWelcomeScreen } from "@screens";
 
 
 type Response = {
@@ -13,10 +13,7 @@ type Response = {
   title: string,
   body: string
 } 
-
 const App = () => {
-
-
   /**
    * search and filter
    */
@@ -91,32 +88,17 @@ const App = () => {
   }
    
   return (
-    <SafeAreaView style = {styles.container} >
+    <View style={styles.container}>
       <StatusBar 
-        barStyle = "light-content"
-        backgroundColor = {colors.statusBar} />
-      <SignInScreen /> 
-{/* 
-      <View style={{backgroundColor:'white'}}>
-        <TextInput 
-          style = {styles.textInput}
-          value= {search}
-          placeholder="Search here"
-          underlineColorAndroid = "transparent"
-          onChangeText={(text) => searchFilter(text)}
-        />
-        <FlatList 
-          data={filterData}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={ItemView}
-          ItemSeparatorComponent={ItemSeparatorView}
-        />
+        barStyle={'light-content'}
+        backgroundColor = {colors.statusBar}
+      />
+      {/* <RootNavigator /> */}
 
-      </View> */}
+      <SignInWelcomeScreen />
 
-
-
-    </SafeAreaView>
+    </View>
+    
   )
 }
 
